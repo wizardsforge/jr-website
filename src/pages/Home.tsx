@@ -26,9 +26,11 @@ const Home = () => {
   const [shuffledImages] = useState(() => shuffleArray(extendedImages));
 
   useEffect(() => {
-    document.title = `${SITE_CONTENT.brand.businessName} - ${SITE_CONTENT.brand.tagline}`;
+    document.title = SITE_CONTENT.brand.businessName;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', SITE_CONTENT.brand.shortPitch);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', SITE_CONTENT.brand.businessName);
   }, []);
 
   useEffect(() => {
