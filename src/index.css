@@ -143,7 +143,10 @@ section {
   margin: 0 auto 1rem;
   color: #4a5568;
   max-width: 100%;
-  white-space: nowrap;
+  white-space: normal;
+}
+.pricing-subtext .sub-line {
+  display: block;
 }
 
 .pricing-cta .pricing-btn {
@@ -783,19 +786,20 @@ footer a {
   }
   header .container {
     flex-direction: column;
-    padding: 0.3rem 20px;
+    padding: 0.8rem 20px 1.1rem;
     min-height: auto;
     align-items: center;
-    gap: 1.125rem;
+    gap: 1.6875rem;
   }
   .logo {
     font-size: 0.625rem;
   }
   .logo svg {
-    transform: scale(1.75) translateY(0);
+    transform: scale(2.2) translateY(2px);
   }
   nav ul {
     margin-top: 1rem;
+    margin-bottom: 1.3rem;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem 1.2rem;
@@ -809,11 +813,18 @@ footer a {
     min-width: 120px;
     text-align: center;
   }
+  nav ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1.2rem;
+  }
   .hero h1 {
     font-size: 3rem;
   }
   .hero {
-    margin-top: 1rem;
+    margin-top: 1.25rem;
   }
   .steps, .pricing-cards {
     flex-direction: column;
@@ -826,6 +837,7 @@ footer a {
   .carousel-images {
     width: 100%;
     padding: 0;
+    gap: 0;
   }
   footer .container {
     display: flex;
@@ -862,6 +874,7 @@ footer a {
   }
   .pricing-group.one-time .pricing-cards {
     align-items: center;
+    justify-content: center;
   }
 
   .services-page .container {

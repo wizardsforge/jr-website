@@ -135,7 +135,7 @@ const Home = () => {
           <div className="pricing-group subscriptions">
             <h3>Subscriptions</h3>
             <p className="pricing-subtext">
-              <strong>Frequency Options:</strong> <strong>Monthly</strong> (Best for Odor Control) • <strong>Every Other Month</strong> (Budget Option) • <strong>Quarterly</strong> (Light Maintenance)
+              <strong>Frequency Options:</strong> <span className="sub-line"><strong>Monthly</strong> (Best for Odor Control)</span> <span className="sub-line"><strong>Every Other Month</strong> (Budget Option)</span> <span className="sub-line"><strong>Quarterly</strong> (Light Maintenance)</span>
             </p>
             <div className="pricing-cards">
               {SITE_CONTENT.pricing.recurring.map((plan, i) => (
