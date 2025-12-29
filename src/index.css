@@ -427,6 +427,8 @@ section {
 .about-cta-actions a {
   color: #0A5EF0;
   font-weight: 700;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .hero h1 {
   font-size: 5rem;
@@ -763,6 +765,10 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  .about-cta-actions .about-card a {
+    word-break: break-all;
+    word-wrap: break-word;
+  }
   header .container {
     flex-direction: column;
     padding: 0.3rem 20px;
@@ -780,13 +786,16 @@ footer a {
     margin-top: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5rem;
   }
   nav li {
-    margin-left: 0.5rem;
+    margin-left: 0;
   }
   nav a {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.95rem;
+    min-width: 120px;
+    text-align: center;
   }
   .hero h1 {
     font-size: 3rem;
@@ -800,11 +809,32 @@ footer a {
   }
   .carousel-images {
     width: 100%;
+    padding: 0;
   }
   footer .container {
+    display: flex;
     flex-direction: column;
     text-align: center;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
+  }
+  .footer-contact,
+  .footer-follow {
+    width: 100%;
+    justify-self: center;
+  }
+  .footer-contact {
+    grid-column: auto;
+  }
+
+  /* Services pricing layout on mobile */
+  .pricing-groups {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .pricing-list li {
+    width: 100%;
+    min-width: 0;
   }
 }

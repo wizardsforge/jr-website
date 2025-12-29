@@ -5,7 +5,7 @@ import { SITE_CONTENT } from '../content';
 const Home = () => {
   const location = useLocation();
   const [currentImage, setCurrentImage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth <= 768 : false));
   const images = SITE_CONTENT.images;
   const basePath = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
   const toResizedPath = (img: string, variant: 'carousel' | 'gallery') => {
