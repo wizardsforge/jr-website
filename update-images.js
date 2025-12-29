@@ -31,11 +31,6 @@ function updateImageList() {
     // Read the content.ts file
     let content = fs.readFileSync(contentFile, 'utf8');
 
-    // Create the new images array string
-    const imagesArrayString = `  images: [
-${images.join(',\n')}
-  ],`;
-
     // Find the images array and replace it
     const imagesStart = content.indexOf('  images: [');
     const imagesEnd = content.indexOf('  ],', imagesStart) + 4;
@@ -51,7 +46,7 @@ ${images.join(',\n')}
     // Create the new images array string
     const imagesArrayString = `  images: [
 ${images.join(',\n')}
-  ]`;
+  ],`;
 
     // Combine the parts
     content = beforeImages + imagesArrayString + afterImages;
