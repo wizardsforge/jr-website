@@ -97,7 +97,11 @@ const About = () => {
             </div>
             <div className="about-card">
               <h3>Ask a Question</h3>
-              <p>Email <a href="mailto:stanleycleaningandwashing@gmail.com">stanleycleaningandwashing@gmail.com</a>, we’re happy to help.</p>
+              <p>Email</p>
+              <p className="about-email-line">
+                <a href="mailto:stanleycleaningandwashing@gmail.com">stanleycleaningandwashing@gmail.com</a>
+              </p>
+              <p>We’re happy to help.</p>
             </div>
             <div className="about-card">
               <h3>Just Say Hi</h3>
