@@ -6,9 +6,10 @@ const Home = () => {
   const location = useLocation();
   const [currentImage, setCurrentImage] = useState(0);
   const images = SITE_CONTENT.images;
+  const basePath = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
   const toResizedPath = (img: string, variant: 'carousel' | 'gallery') => {
     const fileName = img.split('/').filter(Boolean).pop() ?? img;
-    return `/resized/${variant}/${fileName}`;
+    return `${basePath}/resized/${variant}/${fileName}`;
   };
   const extendedImages = [...images, ...images.slice(0, 3)]; // pad for seamless loop
 

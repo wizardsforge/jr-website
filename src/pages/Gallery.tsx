@@ -10,9 +10,10 @@ const Gallery = () => {
   }, []);
 
   const images = SITE_CONTENT.images;
+  const basePath = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
   const toResizedPath = (img: string) => {
     const fileName = img.split('/').filter(Boolean).pop() ?? img;
-    return `/resized/gallery/${fileName}`;
+    return `${basePath}/resized/gallery/${fileName}`;
   };
 
   return (
