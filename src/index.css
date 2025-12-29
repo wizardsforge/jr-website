@@ -425,6 +425,10 @@ section {
 
 .about-cta-actions .about-card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-cta-actions a {
@@ -795,7 +799,7 @@ footer a {
     font-size: 0.625rem;
   }
   .logo svg {
-    transform: scale(2.2) translateY(2px);
+    transform: scale(2.2) translate(-10px, 7px);
   }
   nav ul {
     margin-top: 1rem;
