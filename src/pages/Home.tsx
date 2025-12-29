@@ -34,6 +34,8 @@ const Home = () => {
     if (location.hash === '#contact') {
       const el = document.getElementById('contact');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (location.hash === '#top' || location.hash === '') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
 
@@ -47,7 +49,7 @@ const Home = () => {
   }, [shuffledImages]);
 
   return (
-    <main>
+    <main id="top">
       <section className="hero">
         <div className="container">
           <div className="carousel">
