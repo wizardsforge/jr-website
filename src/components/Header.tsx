@@ -38,12 +38,12 @@ const Header = () => {
         </Link>
         <nav>
           <ul>
-            <li><Link to="/#top" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
+            <li><Link to={{ pathname: '/', hash: '#top' }} className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
             <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link></li>
             <li><Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''}>Gallery</Link></li>
             <li><Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''}>FAQ</Link></li>
             <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link></li>
-            <li><Link to="/#contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
+            <li><Link to={{ pathname: '/', hash: '#contact' }} className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
           </ul>
         </nav>
       </div>

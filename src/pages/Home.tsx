@@ -35,7 +35,7 @@ const Home = () => {
     if (location.hash === '#contact') {
       const el = document.getElementById('contact');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (location.hash === '#top' || location.hash === '') {
+    } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
@@ -77,7 +77,7 @@ const Home = () => {
           </p>
           <div className="ctas">
             <Link to="/services" className="btn primary">Services</Link>
-            <Link to="/contact" className="btn secondary">Contact Us</Link>
+            <Link to={{ pathname: '/', hash: '#contact' }} className="btn secondary">Contact Us</Link>
           </div>
         </div>
       </section>
