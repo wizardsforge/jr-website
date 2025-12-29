@@ -5,6 +5,7 @@ import { SITE_CONTENT } from '../content';
 const Home = () => {
   const location = useLocation();
   const [currentImage, setCurrentImage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const images = SITE_CONTENT.images;
   const basePath = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
   const toResizedPath = (img: string, variant: 'carousel' | 'gallery') => {
@@ -34,6 +35,13 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
     if (location.hash === '#contact') {
       const el = document.getElementById('contact');
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -51,12 +59,14 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [shuffledImages]);
 
+  const slideWidth = isMobile ? 100 : 100 / 3;
+
   return (
     <main id="top">
       <section className="hero">
         <div className="container">
           <div className="carousel">
-            <div className="carousel-images" style={{ transform: `translateX(-${currentImage * (100 / 3)}%)` }}>
+            <div className="carousel-images" style={{ transform: `translateX(-${currentImage * slideWidth}%)` }}>
               {shuffledImages.map((img, index) => (
                 <img 
                   key={index} 
